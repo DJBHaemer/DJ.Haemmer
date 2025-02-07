@@ -6,6 +6,7 @@
   <title>DJ B-Haemmer</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    /* Allgemeine Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -47,7 +48,7 @@
       font-weight: 500;
     }
 
-    /* Hero-Bereich */
+    /* Hero-Sektion */
     .hero {
       height: 60vh;
       background: url('images/hero-background.jpg') no-repeat center center/cover;
@@ -63,16 +64,18 @@
       border-radius: 10px;
     }
     .hero-content h1 {
-      font-size: 10vw; /* Dynamische Größe je nach Bildschirmbreite */
+      font-size: 10vw; 
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 5px;
+      color: white;
     }
     .hero-content p {
       font-size: 1.2rem;
+      color: white;
     }
 
-    /* Einheitliche Sektionen */
+    /* Sektionen */
     .section-container {
       display: flex;
       flex-wrap: wrap;
@@ -99,6 +102,33 @@
       font-weight: 700;
       margin-bottom: 1rem;
       text-align: center;
+      color: white;
+    }
+
+    /* Buchungsformular */
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: none;
+    }
+    button.submit-btn {
+      background-color: #1DA1F2;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    button.submit-btn:hover {
+      background-color: #0d85cc;
     }
 
     /* Instagram-Link */
@@ -108,7 +138,7 @@
       margin: 2rem 0;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #fff;
+      color: #1DA1F2;
       font-weight: bold;
     }
 
@@ -118,69 +148,6 @@
       padding: 1rem;
       background: #000;
       margin-top: 3rem;
-    }
-
-    /* Buchungsformular */
-    .booking-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #222;
-      padding: 2rem;
-      border-radius: 10px;
-    }
-
-    .booking-form .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .booking-form label {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .booking-form input,
-    .booking-form textarea {
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      background-color: #333;
-      color: #fff;
-      outline: none;
-    }
-
-    .booking-form input::placeholder,
-    .booking-form textarea::placeholder {
-      color: #bbb;
-    }
-
-    .booking-form textarea {
-      resize: vertical;
-    }
-
-    .booking-form button {
-      padding: 1rem;
-      background-color: #1DA1F2;
-      color: #fff;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .booking-form button:hover {
-      background-color: #0d95d0;
-    }
-
-    .booking-form button:focus {
-      outline: none;
     }
   </style>
 </head>
@@ -195,7 +162,7 @@
         <li><a href="#about">Über mich</a></li>
         <li><a href="#music">Musik</a></li>
         <li><a href="#contact">Kontakt</a></li>
-        <li><a href="#booking">Buchung</a></li> <!-- Neue Buchungsseite -->
+        <li><a href="#booking">Buchung</a></li>
       </ul>
     </nav>
   </header>
@@ -216,8 +183,7 @@
       <div class="section-text">
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
         <p>Ich sorge stets für den perfekten Mix.</p> 
-        <p>Folgen Sie mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
-        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+        <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
       </div>
     </div>
   </section>
@@ -228,8 +194,7 @@
     <div class="section-container">
       <img src="00.jpg" alt="Musik">
       <div class="section-text">
-        <p>Erleben Sie meine neuesten Mixes.</p>
-        <p>Ich bin für alle Musikrichtungen offen!</p>
+        <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
         <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
@@ -244,7 +209,7 @@
       <div class="section-text">
         <p>Für Buchungen und Anfragen erreichst du mich am besten per E-Mail:</p>
         <p><a href="mailto:Benhammermeister@icloud.com">Benhammermeister@icloud.com</a></p>
-        <p><a href="Tel.: +49 163 3807748">Telefonnummer</a></p>
+        <p>Tel.: +49 163 3807748</p>
       </div>
     </div>
   </section>
@@ -275,17 +240,4 @@
         </div>
         <div class="form-group">
           <label for="message">Nachricht:</label>
-          <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Anfrage absenden</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 DJ B-Haemmer</p>
-  </footer>
-
-</body>
-</html>
+          <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></tex
