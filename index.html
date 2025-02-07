@@ -58,14 +58,19 @@
       position: relative;
     }
     .hero-content h1 {
-      font-size: 10vw;
+      font-size: 8vw;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 5px;
-      color: #fff;
+      background: linear-gradient(90deg, #fff, #ccc, #fff);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s infinite linear;
     }
-    .hero-content p {
-      font-size: 1.2rem;
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
     }
 
     /* Einheitliche Sektionen */
@@ -105,54 +110,42 @@
       margin: 2rem 0;
       font-size: 1.2rem;
       text-decoration: none;
-      color: white;
+      color: #fff;
       font-weight: bold;
     }
 
     /* Buchungsformular */
-    .booking-form {
+    .booking-container {
       max-width: 600px;
       margin: 5rem auto;
       padding: 2rem;
       background: #222;
       border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+      text-align: center;
     }
-    .booking-form label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #fff;
-    }
-    .booking-form input,
-    .booking-form textarea {
+    .booking-container input,
+    .booking-container textarea {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
+      margin: 10px 0;
       border: none;
       border-radius: 5px;
       background: #333;
       color: #fff;
       font-size: 1rem;
     }
-    .booking-form input:focus,
-    .booking-form textarea:focus {
-      outline: none;
-      box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
-    }
-    .booking-form button {
-      width: 100%;
-      padding: 10px;
-      background: #1DA1F2;
+    .booking-container button {
+      padding: 10px 20px;
+      background: #fff;
+      color: #000;
       border: none;
       border-radius: 5px;
-      color: #fff;
-      font-size: 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
     }
-    .booking-form button:hover {
-      background: #0d8ae0;
+    .booking-container button:hover {
+      background: #aaa;
     }
 
     /* Footer */
@@ -174,7 +167,6 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">Über mich</a></li>
         <li><a href="#music">Musik</a></li>
-        <li><a href="#booking">Buchung</a></li>
         <li><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
@@ -196,26 +188,35 @@
       <div class="section-text">
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
         <p>Ich sorge stets für den perfekten Mix.</p> 
+        <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
     </div>
   </section>
 
-  <!-- Buchungsformular -->
-  <section id="booking">
+  <!-- Musik -->
+  <section id="music">
+    <h2 class="section-title">Musik</h2>
+    <div class="section-container">
+      <img src="00.jpg" alt="Musik">
+      <div class="section-text">
+        <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
+        <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt & Buchung -->
+  <section id="contact">
     <h2 class="section-title">Buchung</h2>
-    <form action="https://formspree.io/f/mbldkkdw" method="POST" class="booking-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">E-Mail:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Nachricht:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-
-      <button type="submit">Buchung absenden</button>
-    </form>
+    <div class="booking-container">
+      <form action="https://formspree.io/YOUR_FORMSPREE_URL" method="POST">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <input type="email" name="email" placeholder="Deine E-Mail" required>
+        <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
+        <button type="submit">Anfrage senden</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
