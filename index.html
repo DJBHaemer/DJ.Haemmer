@@ -95,7 +95,7 @@
       width: 100%;
       height: 100%;
       background: linear-gradient(90deg, #fff, #b9b9b9, #fff); /* Schimmer in Weiß und Silber */
-      animation: shimmer 3s infinite; /* Verlangsamte Animation */
+      animation: shimmer 5s infinite; /* Verlangsamte Animation */
       z-index: -1;
     }
 
@@ -162,12 +162,14 @@
       margin: 2rem 0;
       font-size: 1.3rem;
       text-decoration: none;
-      color: #1DA1F2;
+      color: #fff; /* Setzt die Farbe des Links auf Weiß */
       font-weight: bold;
-      transition: color 0.3s;
+      transition: color 0.3s, text-shadow 0.3s;
     }
+
     .instagram-link:hover {
-      color: #fff;
+      color: #1DA1F2; /* Hover-Farbe ändern */
+      text-shadow: 0 0 10px #1DA1F2; /* Leichter Glüheffekt bei Hover */
     }
 
     /* Footer */
@@ -180,6 +182,49 @@
     footer p {
       font-size: 1.2rem;
       color: #fff;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero-content h1 {
+        font-size: 15vw; /* Kleinere Schrift auf Tablets */
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      .section-container {
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+      .section-container img {
+        width: 200px;
+        height: 200px;
+      }
+      .section-text {
+        max-width: 90%;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 20vw; /* Noch kleinere Schrift auf Handys */
+      }
+      .section-container {
+        padding: 1rem;
+      }
+      .section-container img {
+        width: 150px;
+        height: 150px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .instagram-link {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -201,7 +246,7 @@
   <!-- Hero-Sektion -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1><span>DJ B-Haemmer</span></h1>
+      <h1>DJ B-Haemmer</h1>
       <p>Stadion DJ der Hammer Eisbären</p>
     </div>
   </section>
@@ -213,7 +258,7 @@
       <img src="Mein bild.jpg" alt="DJ B-Haemmer">
       <div class="section-text">
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
-        <p>Ich sorge stets für den perfekten Mix.</p> 
+        <p>Ich sorge stets für den perfekten Mix.</p>
         <p>Folgen Sie mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
