@@ -72,34 +72,6 @@
       font-size: 1.2rem;
     }
 
-    /* Buchungsformular */
-    #booking .section-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .form-container input, .form-container textarea {
-      width: 100%;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 5px;
-      background-color: #333;
-      border: none;
-      color: white;
-    }
-    .form-container button {
-      padding: 1rem;
-      background-color: #1DA1F2;
-      color: white;
-      font-size: 1.2rem;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-    .form-container button:hover {
-      background-color: #0d8bcf;
-    }
-
     /* Einheitliche Sektionen */
     .section-container {
       display: flex;
@@ -129,6 +101,17 @@
       text-align: center;
     }
 
+    /* Instagram-Link */
+    .instagram-link {
+      display: block;
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #1DA1F2;
+      font-weight: bold;
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -149,7 +132,6 @@
         <li><a href="#about">Über mich</a></li>
         <li><a href="#music">Musik</a></li>
         <li><a href="#contact">Kontakt</a></li>
-        <li><a href="#booking">Buchung</a></li> <!-- Buchungslink hinzufügen -->
       </ul>
     </nav>
   </header>
@@ -183,7 +165,7 @@
       <img src="00.jpg" alt="Musik">
       <div class="section-text">
         <p>Erleben Sie meine neuesten Mixes.</p>
-        <p> Ich bin für alle Musikrichtungen offen!</p>
+        <p>Ich bin für alle Musikrichtungen offen!</p>
         <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
@@ -199,35 +181,15 @@
         <p>Für Buchungen und Anfragen erreichst du mich am besten per E-Mail:</p>
         <p><a href="mailto:Benhammermeister@icloud.com">Benhammermeister@icloud.com</a></p>
         <p><a href="Tel.: +49 163 3807748">Telefonnummer</a></p>
-      </div>
-    </div>
-  </section>
 
-  <!-- Buchungsformular -->
-  <section id="booking">
-    <h2 class="section-title">Buchungsformular</h2>
-    <div class="section-container">
-      <div class="section-text">
-        <form action="send-mail.php" method="POST">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">E-Mail-Adresse</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="phone">Telefonnummer</label>
-          <input type="text" id="phone" name="phone" required>
-
-          <label for="event">Event-Typ</label>
-          <input type="text" id="event" name="event" required>
-
-          <label for="date">Event-Datum</label>
-          <input type="date" id="date" name="date" required>
-
-          <label for="message">Zusätzliche Informationen</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit">Buchung Absenden</button>
+        <!-- Hier fügst du das Buchungsformular ein -->
+        <h3>Buchungsformular</h3>
+        <form action="https://formspree.io/f/mbldkkdw" method="POST">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="_replyto" placeholder="E-Mail" required>
+          <input type="text" name="event" placeholder="Eventname" required>
+          <textarea name="message" rows="5" placeholder="Nachricht/Buchungsdetails" required></textarea>
+          <button type="submit">Anfrage senden</button>
         </form>
       </div>
     </div>
