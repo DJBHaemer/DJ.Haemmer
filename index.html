@@ -49,7 +49,7 @@
 
     /* Hero-Bereich */
     .hero {
-      height: 60vh;
+      height: 100vh;
       background: url('images/hero-background.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
@@ -57,16 +57,12 @@
       text-align: center;
       position: relative;
     }
-    .hero-content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      border-radius: 10px;
-    }
-      .hero-content h1 {
-  font-size: 10vw; /* Dynamische Größe je nach Bildschirmbreite */
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+    .hero-content h1 {
+      font-size: 10vw;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #fff;
     }
     .hero-content p {
       font-size: 1.2rem;
@@ -80,7 +76,7 @@
       justify-content: center;
       gap: 20px;
       max-width: 900px;
-      margin: 3rem auto;
+      margin: 5rem auto;
       padding: 2rem;
       background: #222;
       border-radius: 10px;
@@ -99,6 +95,7 @@
       font-weight: 700;
       margin-bottom: 1rem;
       text-align: center;
+      color: white;
     }
 
     /* Instagram-Link */
@@ -108,8 +105,54 @@
       margin: 2rem 0;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #1DA1F2;
+      color: white;
       font-weight: bold;
+    }
+
+    /* Buchungsformular */
+    .booking-form {
+      max-width: 600px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    }
+    .booking-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+    .booking-form input,
+    .booking-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .booking-form input:focus,
+    .booking-form textarea:focus {
+      outline: none;
+      box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+    }
+    .booking-form button {
+      width: 100%;
+      padding: 10px;
+      background: #1DA1F2;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .booking-form button:hover {
+      background: #0d8ae0;
     }
 
     /* Footer */
@@ -131,6 +174,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">Über mich</a></li>
         <li><a href="#music">Musik</a></li>
+        <li><a href="#booking">Buchung</a></li>
         <li><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
@@ -152,47 +196,26 @@
       <div class="section-text">
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
         <p>Ich sorge stets für den perfekten Mix.</p> 
-        <p>Folgen Sie mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
     </div>
   </section>
 
-  <!-- Musik -->
-  <section id="music">
-    <h2 class="section-title">Musik</h2>
-    <div class="section-container">
-      <img src="00.jpg" alt="Musik">
-      <div class="section-text">
-        <p>Erleben Sie meine neuesten Mixes.</p>
-        <p>Ich bin für alle Musikrichtungen offen!</p>
-        <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
-        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
-      </div>
-    </div>
-  </section>
+  <!-- Buchungsformular -->
+  <section id="booking">
+    <h2 class="section-title">Buchung</h2>
+    <form action="https://formspree.io/f/mbldkkdw" method="POST" class="booking-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-  <!-- Kontakt -->
-  <section id="contact">
-    <h2 class="section-title">Kontakt</h2>
-    <div class="section-container">
-      <img src="visit.jpg" alt="Kontakt">
-      <div class="section-text">
-        <p>Für Buchungen und Anfragen erreichst du mich am besten per E-Mail:</p>
-        <p><a href="mailto:Benhammermeister@icloud.com">Benhammermeister@icloud.com</a></p>
-        <p><a href="Tel.: +49 163 3807748">Telefonnummer</a></p>
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required>
 
-        <!-- Hier fügst du das Buchungsformular ein -->
-        <h3>Buchungsformular</h3>
-        <form action="https://formspree.io/f/mbldkkdw" method="POST">
-          <input type="text" name="name" placeholder="Name" required>
-          <input type="email" name="_replyto" placeholder="E-Mail" required>
-          <input type="text" name="event" placeholder="Eventname" required>
-          <textarea name="message" rows="5" placeholder="Nachricht/Buchungsdetails" required></textarea>
-          <button type="submit">Anfrage senden</button>
-        </form>
-      </div>
-    </div>
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Buchung absenden</button>
+    </form>
   </section>
 
   <!-- Footer -->
