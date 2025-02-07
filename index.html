@@ -30,7 +30,7 @@
       text-align: center;
     }
     nav .logo {
-      font-size: 2rem; /* Größeres Logo */
+      font-size: 2rem;
       font-weight: 700;
       color: #fff;
       text-transform: uppercase;
@@ -51,7 +51,7 @@
       transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: #1DA1F2; /* Hover-Effekt */
+      color: #1DA1F2;
     }
 
     /* Hero-Bereich */
@@ -70,6 +70,7 @@
       border-radius: 10px;
       max-width: 80%;
     }
+
     /* Schimmernde Animation für den Titel */
     .hero-content h1 {
       font-size: 10vw;
@@ -88,8 +89,9 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, silver, white, silver);
+      background: linear-gradient(90deg, #fff, #b9b9b9, #fff); /* Weiß und Silber als Farbverlauf */
       animation: shimmer 2s infinite;
+      z-index: 1;
     }
 
     @keyframes shimmer {
@@ -104,6 +106,11 @@
       }
     }
 
+    .hero-content h1 span {
+      position: relative;
+      z-index: 2;
+    }
+
     .hero-content p {
       font-size: 1.5rem;
     }
@@ -112,6 +119,7 @@
     section {
       padding: 4rem 2rem;
       margin-top: 4rem;
+      color: #fff; /* Setzt die Schriftfarbe für den gesamten Text in den Sektionen auf Weiß */
     }
     .section-container {
       display: flex;
@@ -144,7 +152,7 @@
       font-weight: 700;
       margin-bottom: 2rem;
       text-align: center;
-      color: #1DA1F2;
+      color: #fff; /* Setzt die Titel auf Weiß */
     }
 
     /* Instagram-Link */
@@ -171,6 +179,7 @@
     }
     footer p {
       font-size: 1.2rem;
+      color: #fff; /* Footer-Texte auf Weiß */
     }
   </style>
 </head>
@@ -192,7 +201,7 @@
   <!-- Hero-Sektion -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>DJ B-Haemmer</h1>
+      <h1><span>DJ B-Haemmer</span></h1>
       <p>Stadion DJ der Hammer Eisbären</p>
     </div>
   </section>
