@@ -30,33 +30,26 @@
       text-align: center;
     }
     nav .logo {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
     }
     nav ul {
       list-style: none;
       padding: 0;
-      margin-top: 1rem;
     }
     nav ul li {
       display: inline;
-      margin: 0 1.5rem;
+      margin: 0 1rem;
     }
     nav ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #1DA1F2;
     }
 
     /* Hero-Bereich */
     .hero {
-      height: 70vh;
+      height: 60vh;
       background: url('images/hero-background.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
@@ -66,93 +59,46 @@
     }
     .hero-content {
       background: rgba(0, 0, 0, 0.6);
-      padding: 3rem;
+      padding: 2rem;
       border-radius: 10px;
-      max-width: 80%;
     }
-
-    /* Schimmernde Animation für den Titel */
     .hero-content h1 {
-      font-size: 10vw;
+      font-size: 10vw; /* Dynamische Größe je nach Bildschirmbreite */
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 5px;
-      color: #fff;
-      position: relative;
     }
-
-    .hero-content h1 span {
-      display: inline-block;
-      position: relative;
-      color: #fff;
-    }
-
-    .hero-content h1 span::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #fff, #b9b9b9, #fff); /* Schimmer in Weiß und Silber */
-      animation: shimmer 5s infinite; /* Verlangsamte Animation */
-      z-index: -1;
-    }
-
-    @keyframes shimmer {
-      0% {
-        left: -100%;
-      }
-      50% {
-        left: 100%;
-      }
-      100% {
-        left: -100%;
-      }
-    }
-
     .hero-content p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     /* Einheitliche Sektionen */
-    section {
-      padding: 4rem 2rem;
-      margin-top: 4rem;
-      color: #fff;
-    }
     .section-container {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
+      gap: 20px;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
       background: #222;
       border-radius: 10px;
-      padding: 2rem;
     }
     .section-container img {
-      width: 250px;
-      height: 250px;
+      width: 200px;
       border-radius: 10px;
-      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
-      transition: transform 0.3s ease;
-    }
-    .section-container img:hover {
-      transform: scale(1.05);
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
     }
     .section-text {
-      max-width: 600px;
+      max-width: 500px;
       text-align: center;
     }
     .section-title {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       text-align: center;
-      color: #fff;
     }
 
     /* Instagram-Link */
@@ -160,71 +106,81 @@
       display: block;
       text-align: center;
       margin: 2rem 0;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       text-decoration: none;
-      color: #fff; /* Setzt die Farbe des Links auf Weiß */
+      color: #fff;
       font-weight: bold;
-      transition: color 0.3s, text-shadow 0.3s;
-    }
-
-    .instagram-link:hover {
-      color: #1DA1F2; /* Hover-Farbe ändern */
-      text-shadow: 0 0 10px #1DA1F2; /* Leichter Glüheffekt bei Hover */
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
       background: #000;
-      margin-top: 5rem;
+      margin-top: 3rem;
     }
-    footer p {
-      font-size: 1.2rem;
+
+    /* Buchungsformular */
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #222;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .booking-form .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .booking-form label {
+      font-size: 1rem;
+      font-weight: 600;
       color: #fff;
+      margin-bottom: 0.5rem;
     }
 
-    /* Responsive Design */
-    @media (max-width: 1024px) {
-      .hero-content h1 {
-        font-size: 15vw; /* Kleinere Schrift auf Tablets */
-      }
-      .hero-content p {
-        font-size: 1.2rem;
-      }
-      .section-container {
-        flex-direction: column;
-        padding: 1.5rem;
-      }
-      .section-container img {
-        width: 200px;
-        height: 200px;
-      }
-      .section-text {
-        max-width: 90%;
-      }
-      .section-title {
-        font-size: 2rem;
-      }
+    .booking-form input,
+    .booking-form textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      outline: none;
     }
 
-    @media (max-width: 600px) {
-      .hero-content h1 {
-        font-size: 20vw; /* Noch kleinere Schrift auf Handys */
-      }
-      .section-container {
-        padding: 1rem;
-      }
-      .section-container img {
-        width: 150px;
-        height: 150px;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-      .instagram-link {
-        font-size: 1rem;
-      }
+    .booking-form input::placeholder,
+    .booking-form textarea::placeholder {
+      color: #bbb;
+    }
+
+    .booking-form textarea {
+      resize: vertical;
+    }
+
+    .booking-form button {
+      padding: 1rem;
+      background-color: #1DA1F2;
+      color: #fff;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .booking-form button:hover {
+      background-color: #0d95d0;
+    }
+
+    .booking-form button:focus {
+      outline: none;
     }
   </style>
 </head>
@@ -239,6 +195,7 @@
         <li><a href="#about">Über mich</a></li>
         <li><a href="#music">Musik</a></li>
         <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#booking">Buchung</a></li> <!-- Neue Buchungsseite -->
       </ul>
     </nav>
   </header>
@@ -258,7 +215,7 @@
       <img src="Mein bild.jpg" alt="DJ B-Haemmer">
       <div class="section-text">
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
-        <p>Ich sorge stets für den perfekten Mix.</p>
+        <p>Ich sorge stets für den perfekten Mix.</p> 
         <p>Folgen Sie mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
@@ -292,9 +249,42 @@
     </div>
   </section>
 
+  <!-- Buchungsformular -->
+  <section id="booking">
+    <h2 class="section-title">Buchungsformular</h2>
+    <div class="section-container">
+      <div class="section-text">
+        <p>Für Buchungsanfragen füllen Sie bitte das Formular aus. Ich werde mich so schnell wie möglich bei Ihnen melden!</p>
+      </div>
+      <form action="submit_form.php" method="POST" class="booking-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail:</label>
+          <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefonnummer:</label>
+          <input type="text" id="phone" name="phone" placeholder="Ihre Telefonnummer">
+        </div>
+        <div class="form-group">
+          <label for="event">Veranstaltung:</label>
+          <input type="text" id="event" name="event" placeholder="Art der Veranstaltung" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Nachricht:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Anfrage absenden</button>
+      </form>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 DJ B-Haemmer. Alle Rechte vorbehalten.</p>
+    <p>&copy; 2025 DJ B-Haemmer</p>
   </footer>
 
 </body>
