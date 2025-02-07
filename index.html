@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ B-Haemmer </title>
+  <title>DJ B-Haemmer</title>
   <!-- Google Fonts für modernen Look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -53,7 +53,7 @@
     /* Hero-Bereich */
     .hero {
       height: 100vh;
-      background: url(Mein bild.jpg) no-repeat center center/cover;
+      background: url('images/hero-background.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -82,22 +82,28 @@
     .hero-content p {
       font-size: 1.2rem;
     }
-    /* Sektionen */
-    section {
-      padding: 4rem 2rem;
-    }
-    .about, .music, .contact {
+    /* Über mich */
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
       max-width: 800px;
       margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .about-container img {
+      width: 250px;
+      border-radius: 10px;
+    }
+    .about-text {
+      max-width: 500px;
     }
     .section-title {
-      text-align: center;
-      margin-bottom: 2rem;
       font-size: 2rem;
       font-weight: 700;
+      margin-bottom: 1rem;
     }
-    /* Instagram-Link */<!-- Instagram-Link -->
-<a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+    /* Instagram-Link */
     .instagram-link {
       display: block;
       text-align: center;
@@ -139,11 +145,14 @@
 
   <!-- Über mich -->
   <section id="about">
-    <div class="about">
-      <h2 class="section-title">Über mich</h2>
-      <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer. </p>
-      <p> Ich sorge stets für den perfekten Mix.</p> 
-      <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
+    <div class="about-container">
+      <img src="images/mein-bild.jpg" alt="DJ B-Haemmer">
+      <div class="about-text">
+        <h2 class="section-title">Über mich</h2>
+        <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
+        <p>Ich sorge stets für den perfekten Mix.</p> 
+        <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
+      </div>
     </div>
   </section>
 
@@ -151,9 +160,7 @@
   <section id="music">
     <div class="music">
       <h2 class="section-title">Musik</h2>
-      <p>Erlebe meine neuesten Mixes. 
-        Ich bin für alle Musik Richtungen offen! 
-        Hier können Sie einen Einblick auf das bekommen, was ich live auflege. </p>
+      <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
       <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
     </div>
   </section>
@@ -162,11 +169,9 @@
   <section id="contact">
     <div class="contact">
       <h2 class="section-title">Kontakt</h2>
-      <p>Für Buchungen und Anfragen erreichen Sie mich am besten per E-Mail:</p>
+      <p>Für Buchungen und Anfragen erreichst du mich am besten per E-Mail:</p>
       <p><a href="mailto:Benhammermeister@icloud.com">Benhammermeister@icloud.com</a></p>
-      <!-- Optional: Hier kannst du auch ein Kontaktformular einfügen -->
-      Tel.: +491633807748
-      
+      <p>Tel.: +49 163 3807748</p>
     </div>
   </section>
 
