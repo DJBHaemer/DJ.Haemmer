@@ -6,7 +6,6 @@
   <title>DJ B-Haemmer</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Allgemeine Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -48,7 +47,7 @@
       font-weight: 500;
     }
 
-    /* Hero-Sektion */
+    /* Hero-Bereich */
     .hero {
       height: 60vh;
       background: url('images/hero-background.jpg') no-repeat center center/cover;
@@ -63,19 +62,17 @@
       padding: 2rem;
       border-radius: 10px;
     }
-    .hero-content h1 {
-      font-size: 10vw; 
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      color: white;
-    }
+      .hero-content h1 {
+        font-size: 10vw;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
     .hero-content p {
       font-size: 1.2rem;
-      color: white;
     }
 
-    /* Sektionen */
+    /* Einheitliche Sektionen */
     .section-container {
       display: flex;
       flex-wrap: wrap;
@@ -102,33 +99,6 @@
       font-weight: 700;
       margin-bottom: 1rem;
       text-align: center;
-      color: white;
-    }
-
-    /* Buchungsformular */
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-top: 0.5rem;
-      border-radius: 5px;
-      border: none;
-    }
-    button.submit-btn {
-      background-color: #1DA1F2;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
-    button.submit-btn:hover {
-      background-color: #0d85cc;
     }
 
     /* Instagram-Link */
@@ -138,7 +108,7 @@
       margin: 2rem 0;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #1DA1F2;
+      color: #fff; /* Instagram Link in Weiß */
       font-weight: bold;
     }
 
@@ -148,6 +118,39 @@
       padding: 1rem;
       background: #000;
       margin-top: 3rem;
+    }
+
+    /* Buchungsformular */
+    #booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #222;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    #booking-form label {
+      font-size: 1.2rem;
+    }
+    #booking-form input, #booking-form textarea {
+      padding: 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #booking-form button {
+      padding: 1rem;
+      font-size: 1.2rem;
+      background: #1DA1F2;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #booking-form button:hover {
+      background: #0077b5;
     }
   </style>
 </head>
@@ -162,7 +165,6 @@
         <li><a href="#about">Über mich</a></li>
         <li><a href="#music">Musik</a></li>
         <li><a href="#contact">Kontakt</a></li>
-        <li><a href="#booking">Buchung</a></li>
       </ul>
     </nav>
   </header>
@@ -184,6 +186,7 @@
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
         <p>Ich sorge stets für den perfekten Mix.</p> 
         <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
+        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
       </div>
     </div>
   </section>
@@ -216,40 +219,24 @@
 
   <!-- Buchungsformular -->
   <section id="booking">
-    <h2 class="section-title">Buchungsformular</h2>
-    <div class="section-container">
-      <div class="section-text">
-        <p>Für Buchungsanfragen füllen Sie bitte das Formular aus. Ich werde mich so schnell wie möglich bei Ihnen melden!</p>
-      </div>
-      <form action="submit_form.php" method="POST" class="booking-form">
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Ihr Name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">E-Mail:</label>
-          <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-        </div>
-        <div class="form-group">
-          <label for="phone">Telefonnummer:</label>
-          <input type="text" id="phone" name="phone" placeholder="Ihre Telefonnummer">
-        </div>
-        <div class="form-group">
-          <label for="event">Veranstaltung:</label>
-          <input type="text" id="event" name="event" placeholder="Art der Veranstaltung" required>
-        </div>
-        <div class="form-group">
-          <label for="message">Nachricht:</label>
-          <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Anfrage absenden</button>
-      </form>
-    </div>
+    <h2 class="section-title">Buchungsanfrage</h2>
+    <form id="booking-form" action="bookings.php" method="POST">
+      <label for="name">Dein Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Deine E-Mail-Adresse:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="event">Eventbeschreibung:</label>
+      <textarea id="event" name="event" required></textarea>
+
+      <button type="submit">Anfrage absenden</button>
+    </form>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 DJ B-Haemmer</p>
+    <p>&copy; 2025 DJ B-Haemmer. Alle Rechte vorbehalten.</p>
   </footer>
 
 </body>
