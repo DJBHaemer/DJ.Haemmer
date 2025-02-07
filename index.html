@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DJ B-Haemmer</title>
-  <!-- Google Fonts für modernen Look -->
+  <!-- Google Fonts für modernes Design -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Grundlegende Reset-Regeln */
+    /* Grundlegendes Styling */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,20 +19,17 @@
       color: #fff;
       background-color: #111;
     }
+
     /* Navigation */
     header {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.8);
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       padding: 1rem 2rem;
+      text-align: center;
     }
     nav .logo {
       font-size: 1.5rem;
@@ -40,19 +37,21 @@
     }
     nav ul {
       list-style: none;
-      display: flex;
+      padding: 0;
     }
     nav ul li {
-      margin-left: 2rem;
+      display: inline;
+      margin: 0 1rem;
     }
     nav ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
     }
+
     /* Hero-Bereich */
     .hero {
-      height: 100vh;
+      height: 60vh;
       background: url('images/hero-background.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
@@ -60,20 +59,10 @@
       text-align: center;
       position: relative;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
     .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      padding: 0 20px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
     }
     .hero-content h1 {
       font-size: 3rem;
@@ -82,41 +71,53 @@
     .hero-content p {
       font-size: 1.2rem;
     }
+
     /* Über mich */
     .about-container {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
       gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: #222;
+      border-radius: 10px;
     }
     .about-container img {
-      width: 250px;
+      width: 200px;
       border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
     }
     .about-text {
       max-width: 500px;
+      text-align: center;
     }
     .section-title {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
+      text-align: center;
     }
+
     /* Instagram-Link */
     .instagram-link {
       display: block;
       text-align: center;
-      margin-top: 1rem;
+      margin: 2rem 0;
       font-size: 1.2rem;
       text-decoration: none;
       color: #1DA1F2;
+      font-weight: bold;
     }
+
     /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
       background: #000;
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -145,10 +146,10 @@
 
   <!-- Über mich -->
   <section id="about">
+    <h2 class="section-title">Über mich</h2>
     <div class="about-container">
       <img src="images/mein-bild.jpg" alt="DJ B-Haemmer">
       <div class="about-text">
-        <h2 class="section-title">Über mich</h2>
         <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
         <p>Ich sorge stets für den perfekten Mix.</p> 
         <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
@@ -158,21 +159,17 @@
 
   <!-- Musik -->
   <section id="music">
-    <div class="music">
-      <h2 class="section-title">Musik</h2>
-      <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
-      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
-    </div>
+    <h2 class="section-title">Musik</h2>
+    <p style="text-align: center;">Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
+    <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
   </section>
 
   <!-- Kontakt -->
   <section id="contact">
-    <div class="contact">
-      <h2 class="section-title">Kontakt</h2>
-      <p>Für Buchungen und Anfragen erreichst du mich am besten per E-Mail:</p>
-      <p><a href="mailto:Benhammermeister@icloud.com">Benhammermeister@icloud.com</a></p>
-      <p>Tel.: +49 163 3807748</p>
-    </div>
+    <h2 class="section-title">Kontakt</h2>
+    <p style="text-align: center;">Für Buchungen und Anfragen erreichst du mich am besten per E-Mail:</p>
+    <p style="text-align: center;"><a href="mailto:Benhammermeister@icloud.com">Benhammermeister@icloud.com</a></p>
+    <p style="text-align: center;">Tel.: +49 163 3807748</p>
   </section>
 
   <!-- Footer -->
