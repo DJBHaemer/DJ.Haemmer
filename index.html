@@ -79,10 +79,16 @@
       letter-spacing: 5px;
       color: #fff;
       position: relative;
-      overflow: hidden;
+      display: inline-block;
     }
 
-    .hero-content h1::before {
+    .hero-content h1 span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 span::before {
       content: "";
       position: absolute;
       top: 0;
@@ -91,7 +97,7 @@
       height: 100%;
       background: linear-gradient(90deg, #fff, #b9b9b9, #fff); /* Weiß und Silber als Farbverlauf */
       animation: shimmer 2s infinite;
-      z-index: 1;
+      z-index: 0;
     }
 
     @keyframes shimmer {
@@ -106,11 +112,6 @@
       }
     }
 
-    .hero-content h1 span {
-      position: relative;
-      z-index: 2;
-    }
-
     .hero-content p {
       font-size: 1.5rem;
     }
@@ -119,7 +120,7 @@
     section {
       padding: 4rem 2rem;
       margin-top: 4rem;
-      color: #fff; /* Setzt die Schriftfarbe für den gesamten Text in den Sektionen auf Weiß */
+      color: #fff;
     }
     .section-container {
       display: flex;
@@ -152,7 +153,7 @@
       font-weight: 700;
       margin-bottom: 2rem;
       text-align: center;
-      color: #fff; /* Setzt die Titel auf Weiß */
+      color: #fff;
     }
 
     /* Instagram-Link */
@@ -179,7 +180,7 @@
     }
     footer p {
       font-size: 1.2rem;
-      color: #fff; /* Footer-Texte auf Weiß */
+      color: #fff;
     }
   </style>
 </head>
