@@ -32,6 +32,8 @@
     nav .logo {
       font-size: 1.5rem;
       font-weight: 700;
+      color: #ff4d4d; /* Rote Neonfarbe für die Logo-Schrift */
+      text-shadow: 0 0 10px rgba(255, 77, 77, 0.7), 0 0 20px rgba(255, 77, 77, 0.6);
     }
     nav ul {
       list-style: none;
@@ -43,8 +45,13 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: #fff;
+      color: #ff4d4d; /* Rote Neonfarbe für die Links */
       font-weight: 500;
+      text-shadow: 0 0 10px rgba(255, 77, 77, 0.7), 0 0 20px rgba(255, 77, 77, 0.6);
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ff4081; /* Leuchtend-rosa beim Hover */
     }
 
     /* Hero-Bereich */
