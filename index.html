@@ -13,6 +13,7 @@
     }
     body {
       font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
       color: #fff;
       background-color: #111;
     }
@@ -145,17 +146,20 @@
       background: #222;
       border-radius: 10px;
     }
+
     .section-title {
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 1rem;
       text-align: center;
     }
+
     .section-container img {
       width: 200px;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
     }
+
     .section-text {
       max-width: 500px;
       text-align: center;
@@ -170,6 +174,7 @@
       border-radius: 10px;
       text-align: center;
     }
+
     .booking-container input,
     .booking-container textarea {
       width: 100%;
@@ -181,6 +186,7 @@
       color: #fff;
       font-size: 1rem;
     }
+
     .booking-container button {
       padding: 10px 20px;
       background: #fff;
@@ -191,6 +197,7 @@
       cursor: pointer;
       transition: 0.3s;
     }
+
     .booking-container button:hover {
       background: #aaa;
     }
@@ -237,25 +244,38 @@
   <!-- Über mich -->
   <section id="about" class="section-container">
     <h2 class="section-title">Über mich</h2>
-    <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
+    <img src="Mein bild.jpg" alt="DJ B-Haemmer">
+    <div class="section-text">
+      <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
+      <p>Ich sorge stets für den perfekten Mix.</p> 
+      <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
+      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+    </div>
   </section>
 
   <!-- Musik -->
   <section id="music" class="section-container">
     <h2 class="section-title">Musik</h2>
-    <p>Hier findest du meine neuesten Mixes.</p>
+    <img src="00.jpg" alt="Musik">
+    <div class="section-text">
+      <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
+      <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
+      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+    </div>
   </section>
 
-  <!-- Buchung -->
-  <section id="contact" class="booking-container">
+  <!-- Kontakt & Buchung -->
+  <section id="contact" class="section-container">
     <h2 class="section-title">Buchung</h2>
-    <form action="https://formspree.io/f/mbldkkdw" method="POST">
-      <input type="text" name="name" placeholder="Dein Name" required>
-      <input type="email" name="email" placeholder="Deine E-Mail" required>
-      <input type="date" name="date" required>
-      <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
-      <button type="submit">Anfrage senden</button>
-    </form>
+    <div class="booking-container">
+      <form action="https://formspree.io/f/mbldkkdw" method="POST">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <input type="email" name="email" placeholder="Deine E-Mail" required>
+        <input type="date" name="date" required> <!-- Neues Feld für das Datum -->
+        <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
+        <button type="submit">Anfrage senden</button>
+      </form>
+    </div>
   </section>
 
   <!-- Footer -->
