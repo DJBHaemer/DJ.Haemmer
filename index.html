@@ -15,7 +15,7 @@
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
       color: #fff;
-      background-color: #111;
+      background-color: #121212; /* Dunkleres Hintergrund für bessere Kontraste */
     }
 
     /* Navigation */
@@ -37,8 +37,9 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       font-weight: 700;
+      color: #fff;
     }
 
     nav ul {
@@ -47,13 +48,18 @@
     }
 
     nav ul li {
-      margin: 0 1rem;
+      margin: 0 1.5rem;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff3d00; /* Harmonischer Farbton für Hover */
     }
 
     /* Burger-Menü für Mobile */
@@ -148,10 +154,11 @@
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 1rem;
       text-align: center;
+      color: #ff3d00; /* Harmonische Farbe für Titel */
     }
 
     .section-container img {
@@ -163,6 +170,22 @@
     .section-text {
       max-width: 500px;
       text-align: center;
+    }
+
+    /* Instagram-Link */
+    .instagram-link {
+      display: block;
+      text-align: center;
+      margin: 2rem 0;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #fff; /* Weiß für Instagram-Link */
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .instagram-link:hover {
+      color: #ff3d00; /* Farbänderung beim Hover */
     }
 
     /* Buchungsformular */
@@ -178,28 +201,28 @@
     .booking-container input,
     .booking-container textarea {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       margin: 10px 0;
       border: none;
       border-radius: 5px;
       background: #333;
       color: #fff;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     .booking-container button {
-      padding: 10px 20px;
-      background: #fff;
-      color: #000;
+      padding: 12px 25px;
+      background: #ff3d00;
+      color: #fff;
       border: none;
       border-radius: 5px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: 0.3s;
     }
 
     .booking-container button:hover {
-      background: #aaa;
+      background: #ff5722; /* Intensivere Farbe beim Hover */
     }
 
     /* Footer */
@@ -271,7 +294,7 @@
       <form action="https://formspree.io/f/mbldkkdw" method="POST">
         <input type="text" name="name" placeholder="Dein Name" required>
         <input type="email" name="email" placeholder="Deine E-Mail" required>
-        <input type="date" name="date" required> <!-- Neues Feld für das Datum -->
+        <input type="date" name="date" required>
         <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
         <button type="submit">Anfrage senden</button>
       </form>
