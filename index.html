@@ -15,7 +15,7 @@
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
       color: #fff;
-      background-color: #121212; /* Dunkleres Hintergrund für bessere Kontraste */
+      background-color: #111;
     }
 
     /* Navigation */
@@ -24,86 +24,30 @@
       position: fixed;
       width: 100%;
       top: 0;
+      left: 0;
       z-index: 1000;
       padding: 1rem 2rem;
+      text-align: center;
     }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .logo {
-      font-size: 1.8rem;
+    nav .logo {
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #fff;
     }
-
     nav ul {
       list-style: none;
-      display: flex;
+      padding: 0;
     }
-
     nav ul li {
-      margin: 0 1.5rem;
+      display: inline;
+      margin: 0 1rem;
     }
-
     nav ul li a {
       text-decoration: none;
       color: #fff;
       font-weight: 500;
-      transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #ff3d00; /* Harmonischer Farbton für Hover */
-    }
-
-    /* Burger-Menü für Mobile */
-    .burger-menu {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .burger-menu div {
-      width: 30px;
-      height: 4px;
-      background: white;
-      margin: 5px;
-      transition: 0.3s;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: rgba(0, 0, 0, 0.9);
-        width: 100%;
-        text-align: center;
-        padding: 1rem 0;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav ul li {
-        margin: 10px 0;
-      }
-
-      .burger-menu {
-        display: flex;
-      }
-    }
-
-    /* Hero-Sektion */
+    /* Hero-Bereich */
     .hero {
       height: 100vh;
       background: url('images/hero-background.jpg') no-repeat center center/cover;
@@ -111,9 +55,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow: hidden;
+      position: relative;
     }
-
     .hero-content h1 {
       font-size: 8vw;
       font-weight: bold;
@@ -123,23 +66,18 @@
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shimmer 3s infinite linear, fadeInUp 1.5s ease-out;
-      opacity: 0;
-      transform: translateY(50px);
-      animation-fill-mode: forwards;
+      animation: shimmer 3s infinite linear, sparkle 1.5s infinite alternate;
     }
-
     @keyframes shimmer {
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
     }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(50px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes sparkle {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
     }
 
-    /* Sektionen */
+    /* Einheitliche Sektionen */
     .section-container {
       display: flex;
       flex-wrap: wrap;
@@ -152,24 +90,21 @@
       background: #222;
       border-radius: 10px;
     }
-
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #ff3d00; /* Harmonische Farbe für Titel */
-    }
-
     .section-container img {
       width: 200px;
       border-radius: 10px;
       box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
     }
-
     .section-text {
       max-width: 500px;
       text-align: center;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: white;
     }
 
     /* Instagram-Link */
@@ -179,13 +114,12 @@
       margin: 2rem 0;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #fff; /* Weiß für Instagram-Link */
+      color: #fff;
       font-weight: bold;
       transition: 0.3s;
     }
-
     .instagram-link:hover {
-      color: #ff3d00; /* Farbänderung beim Hover */
+      color: #ff4081;
     }
 
     /* Buchungsformular */
@@ -197,32 +131,29 @@
       border-radius: 10px;
       text-align: center;
     }
-
     .booking-container input,
     .booking-container textarea {
       width: 100%;
-      padding: 12px;
+      padding: 10px;
       margin: 10px 0;
       border: none;
       border-radius: 5px;
       background: #333;
       color: #fff;
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
-
     .booking-container button {
-      padding: 12px 25px;
-      background: #ff3d00;
-      color: #fff;
+      padding: 10px 20px;
+      background: #fff;
+      color: #000;
       border: none;
       border-radius: 5px;
-      font-size: 1.1rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
     }
-
     .booking-container button:hover {
-      background: #ff5722; /* Intensivere Farbe beim Hover */
+      background: #aaa;
     }
 
     /* Footer */
@@ -232,28 +163,22 @@
       background: #000;
       margin-top: 3rem;
     }
+
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <header>
-    <div class="nav-container">
+    <nav>
       <div class="logo">DJ B-Haemmer</div>
-      <div class="burger-menu" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav>
-        <ul id="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">Über mich</a></li>
-          <li><a href="#music">Musik</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#music">Musik</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- Hero-Sektion -->
@@ -265,36 +190,44 @@
   </section>
 
   <!-- Über mich -->
-  <section id="about" class="section-container">
+  <section id="about">
     <h2 class="section-title">Über mich</h2>
-    <img src="Mein bild.jpg" alt="DJ B-Haemmer">
-    <div class="section-text">
-      <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
-      <p>Ich sorge stets für den perfekten Mix.</p> 
-      <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
-      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+    <div class="section-container">
+      <img src="Mein bild.jpg" alt="DJ B-Haemmer">
+      <div class="section-text">
+        <p>Hallo, ich bin Ben Hammermeister – 16 Jahre alt und bekannt als DJ B-Haemmer.</p>
+        <p>Ich sorge stets für den perfekten Mix.</p> 
+        <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
+        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+      </div>
     </div>
   </section>
 
   <!-- Musik -->
-  <section id="music" class="section-container">
+  <section id="music">
     <h2 class="section-title">Musik</h2>
-    <img src="00.jpg" alt="Musik">
-    <div class="section-text">
-      <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
-      <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
-      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+    <div class="section-container">
+      <img src="00.jpg" alt="Musik">
+      <div class="section-text">
+        <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
+        <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
+        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
+      </div>
     </div>
   </section>
 
   <!-- Kontakt & Buchung -->
-  <section id="contact" class="section-container">
+  <section id="contact">
     <h2 class="section-title">Buchung</h2>
     <div class="booking-container">
       <form action="https://formspree.io/f/mbldkkdw" method="POST">
         <input type="text" name="name" placeholder="Dein Name" required>
         <input type="email" name="email" placeholder="Deine E-Mail" required>
-        <input type="date" name="date" required>
+        
+        <!-- Datumsauswahl -->
+        <label for="date" style="color: #fff; font-size: 1rem; margin-top: 10px;">Datum</label>
+        <input type="date" name="date" id="date" required> <!-- Neues Feld für das Datum -->
+        
         <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
         <button type="submit">Anfrage senden</button>
       </form>
@@ -305,10 +238,6 @@
   <footer>
     <p>&copy; 2025 DJ B-Haemmer. Alle Rechte vorbehalten.</p>
   </footer>
-
-  <script>
-    function toggleMenu() { document.getElementById('nav-links').classList.toggle('show'); }
-  </script>
 
 </body>
 </html>
