@@ -15,30 +15,21 @@
       font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
       color: #fff;
-      background-color: #111;
-    }
-
-    /* Scroll-Animationen */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
+      background-color: #121212;
+      text-align: center;
     }
 
     /* Navigation */
     header {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.9);
       position: fixed;
       width: 100%;
       top: 0;
       left: 0;
       z-index: 1000;
       padding: 1rem 2rem;
-      text-align: center;
+      display: flex;
+      justify-content: center;
     }
 
     /* Hero-Bereich */
@@ -48,37 +39,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      position: relative;
     }
     .hero-content h1 {
-      font-size: 8vw;
+      font-size: 7vw;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 5px;
-      background: linear-gradient(90deg, #ff4d4d, #ffcccc, #ff4d4d);
-      background-size: 300% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: smooth-shimmer 6s infinite linear;
-    }
-    @keyframes smooth-shimmer {
-      0% { background-position: 0% center; }
-      100% { background-position: 300% center; }
+      letter-spacing: 3px;
+      color: #ff4d4d;
     }
 
-    /* Einheitliche Sektionen */
+    /* Sektionen */
     .section-container {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
       max-width: 900px;
       margin: 5rem auto;
       padding: 2rem;
       background: #222;
       border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
 
     /* Buchungsformular */
@@ -88,10 +65,10 @@
       padding: 2rem;
       background: #222;
       border-radius: 10px;
-      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
-    .booking-container select,
     .booking-container input,
+    .booking-container select,
     .booking-container textarea {
       width: 100%;
       padding: 10px;
@@ -115,88 +92,49 @@
     .booking-container button:hover {
       background: #ff4081;
     }
-
   </style>
 </head>
 <body>
+  <header>
+    <h1>DJ B-Haemmer</h1>
+  </header>
 
-  <!-- Hero-Sektion -->
-  <section id="home" class="hero">
+  <section class="hero">
     <div class="hero-content">
       <h1>DJ B-Haemmer</h1>
     </div>
   </section>
 
-  <!-- Über mich -->
-  <section id="about" class="fade-in">
-    <h2 class="section-title">Über mich</h2>
-    <div class="section-container">
-      <img src="Mein bild.jpg" alt="DJ B-Haemmer">
-      <div class="section-text">
-        <p>Hallo, ich bin Ben Hammermeister – .</p>
-        <p>Ich sorge stets für den perfekten Mix.</p> 
-        <p>Ich bringe viel Erfahrung mit </p>
-        <p>Und bin unter anderem Stadion DJ der Hammer Eisbären</p>
-        <p>Somit sorge ich stets für den perfekten Mix</p> 
-        <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
-        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
-      </div>
-    </div>
+  <section class="section-container">
+    <h2>Über mich</h2>
+    <p>Hallo, ich bin Ben Hammermeister – DJ aus Leidenschaft.</p>
+    <p>Ich bin Stadion-DJ der Hammer Eisbären und sorge für den perfekten Mix!</p>
+    <a href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
   </section>
 
-  <!-- Musik -->
-  <section id="music" class="fade-in">
-    <h2 class="section-title">Musik</h2>
-    <div class="section-container">
-      <img src="00.jpg" alt="Musik">
-      <div class="section-text">
-        <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
-        <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
-        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
-      </div>
-    </div>
+  <section class="section-container">
+    <h2>Musik</h2>
+    <p>Erlebe meine neuesten Mixes. Ich bin für alle Musikrichtungen offen!</p>
   </section>
 
-  <!-- Kontakt & Buchung -->
-  <section id="contact" class="fade-in">
-    <h2 class="section-title">Buchung</h2>
-    <div class="booking-container">
-      <form action="https://formspree.io/f/mbldkkdw" method="POST">
-        <input type="text" name="name" placeholder="Dein Name" required>
-        <input type="email" name="email" placeholder="Deine E-Mail" required>
-        
-        <label for="event-type" style="color: #fff; font-size: 1rem;">Art des Events</label>
-        <select name="event-type" id="event-type" required>
-          <option value="Privatparty">Privatparty</option>
-          <option value="Club">Club</option>
-          <option value="Festival">Festival</option>
-          <option value="Firmenevent">Firmenevent</option>
-          <option value="Sonstiges">Sonstiges</option>
-        </select>
-
-        <label for="date" style="color: #fff; font-size: 1rem;">Datum</label>
-        <input type="date" name="date" id="date" required>
-
-        <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
-        <button type="submit">Anfrage senden</button>
-      </form>
-    </div>
+  <section class="booking-container">
+    <h2>Buchung</h2>
+    <form action="https://formspree.io/f/mbldkkdw" method="POST">
+      <input type="text" name="name" placeholder="Dein Name" required>
+      <input type="email" name="email" placeholder="Deine E-Mail" required>
+      <label for="event-type">Art des Events</label>
+      <select name="event-type" id="event-type" required>
+        <option value="Privatparty">Privatparty</option>
+        <option value="Club">Club</option>
+        <option value="Festival">Festival</option>
+        <option value="Firmenevent">Firmenevent</option>
+        <option value="Sonstiges">Sonstiges</option>
+      </select>
+      <label for="date">Datum</label>
+      <input type="date" name="date" id="date" required>
+      <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
+      <button type="submit">Anfrage senden</button>
+    </form>
   </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const fadeElements = document.querySelectorAll(".fade-in");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      });
-
-      fadeElements.forEach(el => observer.observe(el));
-    });
-  </script>
-
 </body>
 </html>
