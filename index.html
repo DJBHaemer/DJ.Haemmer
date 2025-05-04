@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="de">
 <head>
   <meta charset="UTF-8">
@@ -32,7 +32,7 @@
     nav .logo {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #fff; /* Weiß für das Logo */
+      color: #fff;
     }
     nav ul {
       list-style: none;
@@ -44,24 +44,25 @@
     }
     nav ul li a {
       text-decoration: none;
-      color: #ff4d4d; /* Rote Neonfarbe für die Links */
+      color: #ff4d4d;
       font-weight: 500;
       text-shadow: 0 0 10px rgba(255, 77, 77, 0.7), 0 0 20px rgba(255, 77, 77, 0.6);
       transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: #ff4081; /* Leuchtend-rosa beim Hover */
+      color: #ff4081;
     }
 
     /* Hero-Bereich */
     .hero {
       height: 100vh;
-      background: url('images/hero-background.jpg') no-repeat center center/cover;
+      background: #000;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       position: relative;
+      flex-direction: column;
     }
     .hero-content h1 {
       font-size: 8vw;
@@ -74,6 +75,13 @@
       -webkit-text-fill-color: transparent;
       animation: shimmer 5s infinite linear, sparkle 3s infinite alternate;
     }
+    .hero-content img {
+      margin-top: 20px;
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
     @keyframes shimmer {
       0% { background-position: -200% center; }
       100% { background-position: 200% center; }
@@ -83,7 +91,6 @@
       100% { opacity: 1; }
     }
 
-    /* Einheitliche Sektionen */
     .section-container {
       display: flex;
       flex-wrap: wrap;
@@ -114,7 +121,6 @@
       text-shadow: 0 0 10px rgba(255, 77, 77, 0.7), 0 0 20px rgba(255, 77, 77, 0.6);
     }
 
-    /* Instagram-Link */
     .instagram-link {
       display: block;
       text-align: center;
@@ -129,7 +135,6 @@
       color: #ff4081;
     }
 
-    /* Buchungsformular */
     .booking-container {
       max-width: 600px;
       margin: 5rem auto;
@@ -139,7 +144,8 @@
       text-align: center;
     }
     .booking-container input,
-    .booking-container textarea {
+    .booking-container textarea,
+    .booking-container select {
       width: 100%;
       padding: 10px;
       margin: 10px 0;
@@ -151,8 +157,8 @@
     }
     .booking-container button {
       padding: 10px 20px;
-      background: #ff4d4d; /* Button-Hintergrund in der roten Neonfarbe */
-      color: #fff; /* Textfarbe weiß */
+      background: #ff4d4d;
+      color: #fff;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
@@ -160,17 +166,15 @@
       transition: 0.3s;
     }
     .booking-container button:hover {
-      background: #ff4081; /* Button-Hintergrund beim Hover-Effekt */
+      background: #ff4081;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
       background: #000;
       margin-top: 3rem;
     }
-
   </style>
 </head>
 <body>
@@ -192,6 +196,7 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>DJ Haemmer</h1>
+      <img src="AE5E7740-781F-497E-95B3-DF24248FDA25.jpeg" alt="DJ Haemmer Bild">
     </div>
   </section>
 
@@ -199,12 +204,10 @@
   <section id="about">
     <h2 class="section-title">Über mich</h2>
     <div class="section-container">
-      <img src="Mein bild.jpg" alt=" DJ Haemmer">
+      <img src="Mein bild.jpg" alt="DJ Haemmer">
       <div class="section-text">
-        <p>Hallo, ich bin Ben Hammermeister <p>
-        </P> und bin bekannt als DJ Haemmer.</p>
-        <p>Unteranderem bringe ich viel Erfahrung mit, als Stadion DJ<p>
-        <p>der Hammer Eisbären <p>
+        <p>Hallo, ich bin Ben Hammermeister und bin bekannt als DJ Haemmer.</p>
+        <p>Unter anderem bringe ich viel Erfahrung mit, als Stadion-DJ der Hammer Eisbären.</p>
         <p>Ich sorge stets für den perfekten Mix.</p> 
         <p>Folge mir auf Instagram, um über meine nächsten Auftritte informiert zu sein.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
@@ -218,7 +221,7 @@
     <div class="section-container">
       <img src="00.jpg" alt="Musik">
       <div class="section-text">
-        <p>Erlebe meine neuesten Mixes.<p>
+        <p>Erlebe meine neuesten Mixes.</p>
         <p>Ich bin für alle Musikrichtungen offen!</p>
         <p>Hier bekommst du einen Einblick in das, was ich live auflege.</p>
         <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Folge mir auf Instagram</a>
@@ -233,22 +236,20 @@
       <form action="https://formspree.io/f/mbldkkdw" method="POST">
         <input type="text" name="name" placeholder="Dein Name" required>
         <input type="email" name="email" placeholder="Deine E-Mail" required>
-        
-        <!-- Datumsauswahl -->
-        <label for="date" style="color: #fff; font-size: 1rem; margin-top: 10px;">Datum</label>
-        <input type="date" name="date" id="date" required> <!-- Neues Feld für das Datum -->
 
- <label for="event-type" style="color: #fff; font-size: 1rem;">Art des Events</label>
+        <label for="date" style="color: #fff; font-size: 1rem; margin-top: 10px;">Datum</label>
+        <input type="date" name="date" id="date" required>
+
+        <label for="event-type" style="color: #fff; font-size: 1rem;">Art des Events</label>
         <select name="event-type" id="event-type" required>
           <option value="Privatparty">Privatparty</option>
           <option value="Club">Club</option>
           <option value="Festival">Festival</option>
           <option value="Firmenevent">Firmenevent</option>
-           <option value="Hochtzeit">Hochtzeit</option>
+          <option value="Hochtzeit">Hochzeit</option>
           <option value="Sonstiges">Sonstiges</option>
         </select>
-        
-        
+
         <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
         <button type="submit">Anfrage senden</button>
       </form>
