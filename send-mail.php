@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message = $_POST['message'];
 
     // Empfänger-E-Mail-Adresse
-    $to = "benhammermeister@icloud.com"; // Deine E-Mail-Adresse
+    $to = "dj.haemmer@icloud.com"; // Deine E-Mail-Adresse
     $subject = "Buchungsanfrage von $name";
 
     // E-Mail-Inhalt
