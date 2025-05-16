@@ -79,7 +79,7 @@
     /* Hero */
     .hero {
       height: 100vh;
-      background: url('images/hero-background.jpg') no-repeat center center/cover;
+      background: linear-gradient(135deg, #0b0c10, #121c2d);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -122,33 +122,15 @@
       text-shadow: 0 0 10px var(--main-color);
     }
 
-    .section-container {
-      max-width: 900px;
-      margin: auto;
-      background: #111;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .section-container img {
-      width: 220px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px var(--accent-color);
-    }
-
     .section-text {
-      max-width: 500px;
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
     }
 
     .instagram-link {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       color: var(--text-color);
       font-weight: bold;
       text-decoration: none;
@@ -228,10 +210,6 @@
       .menu-toggle {
         display: block;
       }
-
-      .section-container {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -261,28 +239,21 @@
   <!-- Über mich -->
   <section id="about">
     <h2 class="section-title">Über mich</h2>
-    <div class="section-container">
-      <img src="Mein bild.jpg" alt="DJ Haemmer">
-      <div class="section-text">
-        <p>Ich bin Ben Hammermeister – bekannt als DJ Haemmer.</p>
-        <p>Mit Erfahrung als Stadion-DJ der Hammer Eisbären bringe ich jede Crowd zum Beben.</p>
-        <p>Mein Ziel: Immer der perfekte Mix. Immer volle Energie.</p>
-        <p>Folge mir auf Instagram, um keinen Auftritt zu verpassen!</p>
-        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Instagram ansehen</a>
-      </div>
+    <div class="section-text">
+      <p>Ich bin Ben Hammermeister – bekannt als <strong>DJ Haemmer</strong>.</p>
+      <p>Mit Leidenschaft und Erfahrung bringe ich jede Veranstaltung zum Beben – egal ob Club, Firmenfeier oder Stadion.</p>
+      <p>Mein Ziel: Ein Sound, der im Kopf bleibt. Ein Vibe, der verbindet.</p>
+      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Mehr auf Instagram</a>
     </div>
   </section>
 
   <!-- Musik -->
   <section id="music">
     <h2 class="section-title">Musik</h2>
-    <div class="section-container">
-      <img src="00.jpg" alt="Musik">
-      <div class="section-text">
-        <p>Hier bekommst du einen Einblick in meine Welt.</p>
-        <p>Ob Club, Abi-Party oder Firmenevent – ich spiele, was euch bewegt.</p>
-        <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Zu meinen Sets</a>
-      </div>
+    <div class="section-text">
+      <p>Du willst wissen, was ich auflege? Ich spiele das, was Menschen bewegt – ob House, Pop, 2000er oder Club-Banger.</p>
+      <p>Ich bin kein DJ von der Stange – ich bringe Energie und echtes Gefühl in jeden Track.</p>
+      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Hör rein!</a>
     </div>
   </section>
 
@@ -318,7 +289,7 @@
     <p>&copy; 2025 DJ Haemmer. Alle Rechte vorbehalten.</p>
   </footer>
 
-  <!-- Menü Toggle -->
+  <!-- Menü-Script -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
