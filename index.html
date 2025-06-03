@@ -8,7 +8,8 @@
   <style>
     :root {
       --main-color: #4db8ff;
-      --accent-color: #1e90ff;
+      --accent-color: #8e44ad;
+      --pink-color: #ff4da6;
       --bg-color: #0b0c10;
       --text-color: #ffffff;
     }
@@ -27,57 +28,48 @@
       position: relative;
     }
 
-    .laser-show {
+    .laser-bg {
       position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
       width: 100%;
       height: 100vh;
-      z-index: 0;
       pointer-events: none;
+      z-index: 0;
     }
 
     .laser {
       position: absolute;
       bottom: 0;
-      width: 4px;
+      width: 14px;
       height: 100vh;
-      background: linear-gradient(to top, #00f2ff, transparent);
-      animation: laser-beam 4s ease-in-out infinite, flicker 1.5s infinite;
-      filter: blur(1px);
+      background: linear-gradient(to top, rgba(77,184,255,0.8), rgba(142,68,173,0.5), rgba(255,77,166,0.3), transparent);
+      filter: blur(2px);
+      transform-origin: bottom center;
+      animation: laserSpread 5s ease-in-out infinite;
     }
 
-    .laser:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .laser:nth-child(2) { left: 25%; animation-delay: 0.5s; }
-    .laser:nth-child(3) { left: 40%; animation-delay: 1s; }
-    .laser:nth-child(4) { left: 60%; animation-delay: 1.5s; }
-    .laser:nth-child(5) { left: 75%; animation-delay: 2s; }
-    .laser:nth-child(6) { left: 90%; animation-delay: 2.5s; }
+    .laser:nth-child(1) { left: 50%; transform: rotate(-20deg); animation-delay: 0s; }
+    .laser:nth-child(2) { left: 50%; transform: rotate(0deg);   animation-delay: 0.3s; }
+    .laser:nth-child(3) { left: 50%; transform: rotate(20deg);  animation-delay: 0.6s; }
 
-    @keyframes laser-beam {
-      0% { height: 0; opacity: 0.1; }
-      50% { height: 100vh; opacity: 1; }
+    @keyframes laserSpread {
+      0%   { height: 0; opacity: 0.1; }
+      50%  { height: 100vh; opacity: 0.7; }
       100% { height: 0; opacity: 0.1; }
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
     }
 
     .fog {
       position: fixed;
       bottom: 0;
+      left: 0;
       width: 100%;
-      height: 40%;
-      background: linear-gradient(to top, rgba(255,255,255,0.07), transparent);
+      height: 35%;
+      background: linear-gradient(to top, rgba(255,255,255,0.05), transparent);
       filter: blur(20px);
-      animation: fog-move 12s ease-in-out infinite;
-      z-index: 0;
-    }
-
-    @keyframes fog-move {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(40px); }
-      100% { transform: translateX(0); }
+      z-index: 1;
+      pointer-events: none;
     }
 
     header {
@@ -128,44 +120,37 @@
     nav ul li a:hover {
       color: var(--main-color);
     }
-        .hero {
+
+    section {
+      padding: 6rem 1rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
       height: 100vh;
-      background: linear-gradient(135deg, #0b0c10, #121c2d);
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      z-index: 1;
-      position: relative;
+      flex-direction: column;
     }
 
-    .hero-content h1 {
+    .hero h1 {
       font-size: 8vw;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 5px;
-      background: linear-gradient(90deg, var(--main-color), var(--accent-color), var(--main-color));
+      background: linear-gradient(90deg, var(--main-color), var(--pink-color), var(--accent-color));
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shimmer 5s infinite linear, glow 2s infinite ease-in-out;
+      animation: shimmer 5s linear infinite, glow 3s ease-in-out infinite;
     }
 
-    @keyframes shimmer {
-      0% { background-position: -200% center; }
-      100% { background-position: 200% center; }
-    }
-
-    @keyframes glow {
-      0%, 100% { text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color); }
-      50% { text-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color); }
-    }
-
-    section {
-      padding: 5rem 1rem;
-      text-align: center;
-      position: relative;
-      z-index: 2;
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.5rem;
     }
 
     .section-title {
@@ -238,8 +223,18 @@
       padding: 1rem;
       background: #050505;
       color: #777;
-      z-index: 2;
       position: relative;
+      z-index: 2;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color); }
+      50% { text-shadow: 0 0 20px var(--accent-color), 0 0 40px var(--accent-color); }
     }
 
     @media (max-width: 768px) {
@@ -269,18 +264,13 @@
 </head>
 <body>
 
-  <!-- Lasershow -->
-  <div class="laser-show">
+  <div class="laser-bg">
     <div class="laser"></div>
     <div class="laser"></div>
     <div class="laser"></div>
-    <div class="laser"></div>
-    <div class="laser"></div>
-    <div class="laser"></div>
-    <div class="fog"></div>
   </div>
+  <div class="fog"></div>
 
-  <!-- Navigation -->
   <header>
     <nav>
       <div class="logo">DJ Haemmer</div>
@@ -294,13 +284,11 @@
     </nav>
   </header>
 
-  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>DJ Haemmer</h1>
-    </div>
+    <h1>DJ Haemmer</h1>
+    <p>Sound, der bleibt. Vibes, die verbinden.</p>
   </section>
-  <!-- Über mich -->
+
   <section id="about">
     <h2 class="section-title">Über mich</h2>
     <div class="section-text">
@@ -311,7 +299,6 @@
     </div>
   </section>
 
-  <!-- Musik -->
   <section id="music">
     <h2 class="section-title">Musik</h2>
     <div class="section-text">
@@ -321,17 +308,14 @@
     </div>
   </section>
 
-  <!-- Buchung -->
   <section id="contact">
     <h2 class="section-title">Buchung</h2>
     <div class="booking-container">
       <form action="https://formspree.io/f/mbldkkdw" method="POST">
         <input type="text" name="name" placeholder="Dein Name" required>
         <input type="email" name="email" placeholder="Deine E-Mail" required>
-
         <label for="date">Datum</label>
         <input type="date" name="date" id="date" required>
-
         <label for="event-type">Art des Events</label>
         <select name="event-type" id="event-type" required>
           <option value="Privatparty">Privatparty</option>
@@ -341,27 +325,22 @@
           <option value="Hochzeit">Hochzeit</option>
           <option value="Sonstiges">Sonstiges</option>
         </select>
-
         <textarea name="message" rows="5" placeholder="Nachricht / Buchungsanfrage" required></textarea>
         <button type="submit">Anfrage senden</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 DJ Haemmer. Alle Rechte vorbehalten.</p>
   </footer>
 
-  <!-- Menü-Script -->
   <script>
     const toggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
-
     toggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
     });
-
     document.querySelectorAll('#nav-links a').forEach(link =>
       link.addEventListener('click', () => {
         navLinks.classList.remove('show');
@@ -371,4 +350,3 @@
 
 </body>
 </html>
-  
