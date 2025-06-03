@@ -28,7 +28,6 @@
       position: relative;
     }
 
-    /* LASER SHOW */
     .laser-bg {
       position: fixed;
       bottom: 0;
@@ -43,23 +42,21 @@
     .laser {
       position: absolute;
       bottom: 0;
-      width: 10px;
+      width: 14px;
       height: 100vh;
-      background: linear-gradient(to top, rgba(77,184,255,0.6), rgba(142,68,173,0.4), rgba(255,77,166,0.2), transparent);
+      background: linear-gradient(to top, rgba(77,184,255,0.8), rgba(142,68,173,0.5), rgba(255,77,166,0.3), transparent);
       filter: blur(2px);
       transform-origin: bottom center;
-      animation: laserSpread 4s ease-in-out infinite;
+      animation: laserSpread 5s ease-in-out infinite;
     }
 
-    .laser:nth-child(1) { left: 50%; transform: rotate(-25deg); animation-delay: 0.2s; }
-    .laser:nth-child(2) { left: 50%; transform: rotate(-10deg); animation-delay: 0.4s; }
-    .laser:nth-child(3) { left: 50%; transform: rotate(0deg); animation-delay: 0.6s; }
-    .laser:nth-child(4) { left: 50%; transform: rotate(10deg); animation-delay: 0.8s; }
-    .laser:nth-child(5) { left: 50%; transform: rotate(25deg); animation-delay: 1s; }
+    .laser:nth-child(1) { left: 50%; transform: rotate(-20deg); animation-delay: 0s; }
+    .laser:nth-child(2) { left: 50%; transform: rotate(0deg);   animation-delay: 0.3s; }
+    .laser:nth-child(3) { left: 50%; transform: rotate(20deg);  animation-delay: 0.6s; }
 
     @keyframes laserSpread {
-      0% { height: 0; opacity: 0.1; }
-      50% { height: 100vh; opacity: 0.6; }
+      0%   { height: 0; opacity: 0.1; }
+      50%  { height: 100vh; opacity: 0.7; }
       100% { height: 0; opacity: 0.1; }
     }
 
@@ -68,9 +65,9 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 30%;
+      height: 35%;
       background: linear-gradient(to top, rgba(255,255,255,0.05), transparent);
-      filter: blur(15px);
+      filter: blur(20px);
       z-index: 1;
       pointer-events: none;
     }
@@ -271,8 +268,6 @@
     <div class="laser"></div>
     <div class="laser"></div>
     <div class="laser"></div>
-    <div class="laser"></div>
-    <div class="laser"></div>
   </div>
   <div class="fog"></div>
 
@@ -300,7 +295,7 @@
       <p>Ich bin Ben Hammermeister – bekannt als <strong>DJ Haemmer</strong>.</p>
       <p>Mit Leidenschaft und Erfahrung bringe ich jede Veranstaltung zum Beben – egal ob Club, Firmenfeier oder Stadion.</p>
       <p>Mein Ziel: Ein Sound, der im Kopf bleibt. Ein Vibe, der verbindet.</p>
-      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Mehr auf Instagram</a>
+      <a class="instagram-link" href="https://www.instagram.com/dj.haemmer/" target="_blank">Mehr auf Instagram</a>
     </div>
   </section>
 
@@ -309,7 +304,7 @@
     <div class="section-text">
       <p>Du willst wissen, was ich auflege? Ich spiele das, was Menschen bewegt – ob House, Pop, 2000er oder Club-Banger.</p>
       <p>Ich bin kein DJ von der Stange – ich bringe Energie und echtes Gefühl in jeden Track.</p>
-      <a class="instagram-link" href="https://www.instagram.com/dj.bhaemmer/" target="_blank">Hör rein!</a>
+      <a class="instagram-link" href="https://www.instagram.com/dj.haemmer/" target="_blank">Hör rein!</a>
     </div>
   </section>
 
